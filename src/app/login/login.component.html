@@ -1,0 +1,28 @@
+<div class="container">
+    
+<div class="py-5 ">
+    <h4 class="mb-4"><b>login now :</b></h4>
+<form action="" [formGroup]="logInForm" (ngSubmit)="sendLogIn(logInForm)">
+    
+    <div class="pb-4">
+        <label for="email" class="mb-1">email:</label>
+        <input id="email" type="email" class="form-control" formControlName="email">
+    </div>
+    <div class="pb-4">
+        <label for="password" class="mb-1">password:</label>
+        <input id="password" type="password" class="form-control" formControlName="password">
+    </div>
+
+
+
+    <div class="d-flex justify-content-between">
+        <a class="forget" routerLink="/forgotPassword"><b>forget your password ?</b></a> 
+        <button [disabled]="logInForm.invalid" class="btn btn-lg bg-main text-white d-block ms-auto">
+            <i *ngIf="isLoading" class="fa fa-spinner fa-spin"></i>
+            <span *ngIf="!isLoading">LogIn</span>
+        </button>
+    </div>
+    
+</form>
+</div>
+</div>

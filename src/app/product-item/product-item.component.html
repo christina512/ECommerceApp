@@ -1,0 +1,21 @@
+<div class="product px-2 py-4">
+    <a [routerLink]="['/productDetails',product.id]">
+    <img [src]="product.imageCover" alt="" class="img-fluid">
+    <p class="text-main">{{product.category.name}}</p>
+    <h2 class="h6">{{product.title.split(" ").splice(0,2).join(" ")}}</h2>
+    <div class="d-flex justify-content-between">
+        <span>{{product.price}}EGP</span>
+        <div>
+            <i class="fa fa-star rating-color"></i>
+            {{product.ratingsAverage}}
+        </div>
+    </div>
+</a>
+    <div class="text-center pt-2 cursor-pointer">
+        <i *ngIf="!wishListData.includes($any(product.id))" class="fa-solid fa-heart fs-3 cursor-pointer" (click)="addToWishList(product.id)"></i>
+        <i *ngIf="wishListData.includes($any(product.id))" class="fa-solid fa-heart text-danger fs-3 cursor-pointer" (click)="deleteItem(product.id)"></i>
+
+        <button class="btn bg-main w-100 text-white my-2" (click)="addToCart(product.id)">Add to Cart</button>
+        
+    </div>
+</div>

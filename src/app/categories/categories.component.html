@@ -1,0 +1,18 @@
+<!-- <div class="d-flex py-5">
+    <div *ngFor="let category of allcategories">
+        <img [src]="category.image" alt="" class="w-100" height="200">
+        <h3>{{category.name}}</h3>
+    </div>
+</div> -->
+
+
+<owl-carousel-o [options]="customOptions">
+
+    <ng-container *ngFor="let slide of allcategories">
+      <ng-template carouselSlide >
+        <img [src]="slide.image" height="300" >
+        <h4 class="text-center fw-bold pt-1">{{slide.name}}</h4>
+      </ng-template>
+    </ng-container>
+
+  </owl-carousel-o>

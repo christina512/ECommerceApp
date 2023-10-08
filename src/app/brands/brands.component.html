@@ -1,0 +1,14 @@
+<div class="container pb-5">
+    <div class="row gy-4" >
+        <div class="col-md-3 " *ngFor="let brand of allBrands">
+            <div class="card">
+<div class="card-img">
+    <img [src]="brand.image" alt="" class="w-100">
+</div>
+<div class="card-body">
+    <p class="text-center">{{brand.name}}</p>
+</div>
+            </div>
+        </div>
+    </div>
+</div>
